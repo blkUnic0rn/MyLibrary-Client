@@ -1,1 +1,19 @@
 @import '~bootstrap/scss/bootstrap';
+
+h1 {
+  color: white;
+}
+
+.welcome {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  :last-child {
+    align-items: space-around;
+  }
+}
+
+body {
+  background-image: url('./../public/bookshelfimg.jpg');
+}
