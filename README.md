@@ -1,7 +1,10 @@
-# Application Title: My Library
+# My Library
+
 ## Important Links
 Deployed Site: https://kayla-sa-w.github.io/MyLibrary-Client
+
 Client Repo: https://github.com/Kayla-SA-W/MyLibrary-Client
+
 API Repo: https://github.com/Kayla-SA-W/MyLibrary
 
 
