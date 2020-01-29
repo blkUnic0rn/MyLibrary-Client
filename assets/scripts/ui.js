@@ -14,8 +14,8 @@ const signUpFailure = function () {
 const signInSuccess = function (response) {
   $('#signInMessage').text('successfully Signed In!')
   store.user = response.user
-  $('#sign-in').hide()
-  $('#sign-up').hide()
+  $('#sign-up-modal').hide()
+  $('#sign-in-modal').hide()
 }
 
 const signInFailure = function () {
