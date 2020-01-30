@@ -24,15 +24,15 @@ const onSignIn = function (event) {
     .catch(ui.signInFailure)
 }
 
-// const onChangePw = function (event) {
-//   event.preventDefault()
-//
-//   const form = event.target
-//   const data = getFormFields(form)
-//   api.changePw(data)
-//     .then(ui.changePwSuccess)
-//     .catch(ui.changePwFailure)
-// }
+const onChangePw = function (event) {
+  event.preventDefault()
+
+  const form = event.target
+  const data = getFormFields(form)
+  api.changePw(data)
+    .then(ui.changePwSuccess)
+    .catch(ui.changePwFailure)
+}
 
 const onSignOut = function (event) {
   event.preventDefault()
@@ -45,14 +45,13 @@ const addHandlers = function () {
   $('#sign-up').on('submit', onSignUp)
   $('#sign-in').on('submit', onSignIn)
   $('#logout').on('click', onSignOut)
+  $('#change-pw').on('submit', onChangePw)
   $('#sign-up-modal').on('click', function (e) {
     e.preventDefault()
   })
   $('#sign-in-modal').on('click', function (a) {
     a.preventDefault()
   })
-
-  // $('#change-pw').on('submit', onChangePw)
 }
 
 module.exports = {

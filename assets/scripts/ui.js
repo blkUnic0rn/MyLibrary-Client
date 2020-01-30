@@ -16,9 +16,10 @@ const signInSuccess = function (response) {
   store.user = response.user
   $('#sign-up-modal').hide()
   $('#sign-in-modal').hide()
-  $('#changepw-modal').show()
-  $('#createNewBook').show()
-  $('#logout').show()
+  // $('change-pw').show()
+  // $('#createNewBook').show()
+  // $('#logout').show()
+  $('#top-aside').show()
   $('#sign-in').trigger('reset')
 }
 
@@ -30,7 +31,7 @@ const signInFailure = function () {
 const signOutSuccess = function (response) {
   $('#logoutMessage').text('successfully signed out!')
   $('#sign-in-modal').trigger('reset')
-  $('#changepw-modal').hide()
+  $('#change-pw').hide()
   $('#logout').hide()
   $('#sign-up-modal').show()
   $('#sign-in-modal').show()
@@ -41,11 +42,23 @@ const signOutFailure = function () {
   $('#logoutMessage').text('could not sign out!')
 }
 
+const changePwSuccess = function (response) {
+  console.log('success')
+  // $('#change-pw').trigger('reset')
+}
+
+const changePwFailure = function () {
+  // $('#change-pw').trigger('reset')
+  console.log('fail')
+}
+
 module.exports = {
   signUpSuccess,
   signUpFailure,
   signInSuccess,
   signInFailure,
   signOutSuccess,
-  signOutFailure
+  signOutFailure,
+  changePwSuccess,
+  changePwFailure
 }

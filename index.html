@@ -14,18 +14,25 @@
 </head>
 
 <body>
-  <header>
+  <header id='top-aside'>
     <nav>
       <button type="button" class="btn btn btn-light text-center" id='logout'> Logout </button>
-      <button type="button" class="btn btn btn-light text-center" id="changepw-modal" data-toggle="modal" data-target="#signInModal"> Change PW </button>
       <button type="button" class="btn btn btn-light text-center" id='createNewBook'> Create </button>
     </nav>
+    <h3>Change Password</h3>
+    <form id='change-pw'>
+        <fieldset>
+          <input name='passwords[old]' type='password' placeholder='Old Password' />
+          <input name='passwords[new]' type='password' placeholder='New Password' />
+          <input type='submit' value='Change Password' />
+        </fieldset>
+      </form>
       </header>
   <div class='welcome'>
     <h1>Welcome to My Library</h1>
     <br>
     <div id='credButtons'>
-      <button type="button" class="btn btn btn-light text-center" id="sign-up-modal" data-toggle="modal" data-target="#signUpModal"> Sign up </button>
+      <button type="button" class="btn btn btn-light text-center" id="sign-up-modal" data-toggle="modal" data-target="#signUpModal"> Sign Up </button>
       <button type="button" class="btn btn btn-light text-center" id="sign-in-modal" data-toggle="modal" data-target="#signInModal"> Sign In </button>
     </div>
   </div>
@@ -88,6 +95,7 @@
       </div>
     </div>
   </div>
+
 
 
   <!-- <footer>
