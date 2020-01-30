@@ -41,7 +41,7 @@ const onSignOut = function (event) {
     .catch(ui.signOutFailure)
 }
 
-const addHandlers = function () {
+const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp)
   $('#sign-in').on('submit', onSignIn)
   $('#logout').on('click', onSignOut)
