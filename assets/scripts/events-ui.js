@@ -17,8 +17,14 @@ const getBooksSuccess = (data) => {
   const myLibrary = showBooksList({ books: data.books })
   $('#bookshelf').html(myLibrary)
 }
+
+const onShowBookSuccess = (data) => {
+  console.log('Horray!')
+}
+
 module.exports = {
   onCreateBookSuccess,
   onCreateBookFailure,
-  getBooksSuccess
+  getBooksSuccess,
+  onShowBookSuccess
 }

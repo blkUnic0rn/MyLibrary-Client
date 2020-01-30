@@ -65,3 +65,7 @@ section {
   height: 75%;
   margin: auto;
 }
+
+section:hover {
+  background-color: rgba(139, 69, 19, .6);
+}

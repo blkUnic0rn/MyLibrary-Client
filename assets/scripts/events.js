@@ -28,10 +28,25 @@ const onGetBooks = (event) => {
     .catch(ui.failure)
 }
 
+const toRemove = (event) => {
+  const id = $(event.target).data('id')
+  api.onRemoveBooks(id)
+    .then(ui.onRemoveSuccess)
+    .catch(ui.onRemoveFailure)
+}
+
+const showBookProfile = (event) => {
+  const id = $(event.target).closest('section').data('id')
+  api.getaBook(id)
+    .then(ui.onShowBookSuccess)
+    .catch()
+}
+
 const addHandlers = () => {
   $('#createNewBook').on('click', showCreateBookForm)
   $('#createBook').on('submit', onCreateBook)
   $('#showbooks').on('click', onGetBooks)
+  $('#bookshelf').on('click', 'section', showBookProfile)
 }
 
 module.exports = {

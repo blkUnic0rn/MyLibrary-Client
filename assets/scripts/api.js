@@ -58,11 +58,27 @@ const getBooks = function () {
   })
 }
 
+const getaBook = function (id) {
+  return $.ajax({
+    url: config.apiUrl + '/books/' + id,
+    method: 'GET'
+  })
+}
+
+const onRemoveBooks = (id) => {
+  return $.ajax({
+    url: config.apiUrl + '/books/' + id,
+    method: 'DELETE'
+  })
+}
+
 module.exports = {
   signUp,
   signIn,
   signOut,
   changePw,
   createBook,
-  getBooks
+  getBooks,
+  onRemoveBooks,
+  getaBook
 }
