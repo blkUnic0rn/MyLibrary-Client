@@ -52,10 +52,17 @@ const createBook = function (data) {
   })
 }
 
+const getBooks = function () {
+  return $.ajax({
+    url: config.apiUrl + '/books'
+  })
+}
+
 module.exports = {
   signUp,
   signIn,
   signOut,
   changePw,
-  createBook
+  createBook,
+  getBooks
 }

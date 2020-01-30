@@ -15,12 +15,23 @@ const onCreateBook = (event) => {
 }
 
 const showCreateBookForm = () => {
+  $('#bookshelf').hide()
   $('#createbookForm').show()
+}
+
+const onGetBooks = (event) => {
+  $('#bookshelf').show()
+  event.preventDefault()
+
+  api.getBooks()
+    .then(ui.getBooksSuccess)
+    .catch(ui.failure)
 }
 
 const addHandlers = () => {
   $('#createNewBook').on('click', showCreateBookForm)
   $('#createBook').on('submit', onCreateBook)
+  $('#showbooks').on('click', onGetBooks)
 }
 
 module.exports = {

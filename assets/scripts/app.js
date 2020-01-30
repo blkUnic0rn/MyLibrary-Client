@@ -5,7 +5,6 @@ const events = require('./events')
 
 $(() => {
   $('#top-aside').hide()
-  $('#bookshelf').hide()
   $('#createbookForm').hide()
   authEvents.addHandlers()
   events.addHandlers()

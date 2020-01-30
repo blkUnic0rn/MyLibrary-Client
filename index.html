@@ -18,9 +18,10 @@
     <nav>
       <button type="button" class="btn btn btn-light text-center" id='logout'> Logout </button>
       <button type="button" class="btn btn btn-light text-center" id='createNewBook'> Create </button>
+      <button type="button" class="btn btn btn-light text-center" id='showbooks'> Get All Books </button>
     </nav>
-    <h3>Change Password</h3>
     <form id='change-pw'>
+      <h3>Change Password</h3>
         <fieldset>
           <input name='passwords[old]' type='password' placeholder='Old Password' />
           <input name='passwords[new]' type='password' placeholder='New Password' />
@@ -102,17 +103,16 @@
         <legend> New Book! </legend>
         <input name='book[title]' type='text' placeholder='Book Title' />
         <input name='book[author]' type='text' placeholder='Author Name' />
-        <input name='book[rating]' type='number' placeholder='Rating' />
-        <!-- <div id='rating'>
+        <div id='rating'>
           <label class='heart'>
-            <input type="radio" name="books[rating]" value="1">
+            <input type="radio" name="book[rating]" value="1">
             <div class='imgSelect'>
             <img src='./public/yellowheart.png' alt='yellow heart' width="50" height="50"/>
             </div>
           </label>
           <br>
           <label class='heart'>
-            <input type="radio" name="books[rating]" value="2">
+            <input type="radio" name="book[rating]" value="2">
             <div class='imgSelect'>
             <img src='./public/yellowheart.png' alt='yellow heart' width="50" height="50"/>
             <img src='./public/yellowheart.png' alt='yellow heart' width="50" height="50"/>
@@ -120,7 +120,7 @@
           </label>
           <br>
           <label class='heart'>
-            <input type="radio" name="books[rating]" value="3">
+            <input type="radio" name="book[rating]" value="3">
             <div class='imgSelect'>
             <img src='./public/yellowheart.png' alt='yellow heart' width="50" height="50"/>
             <img src='./public/yellowheart.png' alt='yellow heart' width="50" height="50"/>
@@ -129,7 +129,7 @@
           </label>
           <br>
           <label class='heart'>
-            <input type="radio" name="books[rating]" value="4">
+            <input type="radio" name="book[rating]" value="4">
             <div class='imgSelect'>
             <img src='./public/yellowheart.png' alt='yellow heart' width="50" height="50"/>
             <img src='./public/yellowheart.png' alt='yellow heart' width="50" height="50"/>
@@ -139,7 +139,7 @@
           </label>
           <br>
           <label class='heart'>
-            <input type="radio" name="books[rating]" value="5">
+            <input type="radio" name="book[rating]" value="5">
             <div class='imgSelect'>
             <img src='./public/yellowheart.png' alt='yellow heart' width="50" height="50"/>
             <img src='./public/yellowheart.png' alt='yellow heart' width="50" height="50"/>
@@ -148,7 +148,7 @@
             <img src='./public/yellowheart.png' alt='yellow heart' width="50" height="50"/>
             </div>
           </label>
-        </div> -->
+        </div>
         <input class='bookreview' name='book[review]' type='text' maxlength='500' placeholder='Review...' />
         <!-- <div class="form-group">
             <label for="reviewControlTextArea">Review</label>
