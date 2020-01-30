@@ -34,16 +34,17 @@ const onSignIn = function (event) {
 //     .catch(ui.changePwFailure)
 // }
 
-// const onLogout = function (event) {
-//   event.preventDefault()
-//   api.signOut()
-//     .then(ui.signOutSuccess)
-//     .catch(ui.signOutFailure)
-// }
+const onSignOut = function (event) {
+  event.preventDefault()
+  api.signOut()
+    .then(ui.signOutSuccess)
+    .catch(ui.signOutFailure)
+}
 
 const addHandlers = function () {
   $('#sign-up').on('submit', onSignUp)
   $('#sign-in').on('submit', onSignIn)
+  $('#logout').on('click', onSignOut)
   $('#sign-up-modal').on('click', function (e) {
     e.preventDefault()
   })
@@ -52,7 +53,6 @@ const addHandlers = function () {
   })
 
   // $('#change-pw').on('submit', onChangePw)
-  // $('#logout').on('sumbit', onLogout)
 }
 
 module.exports = {
