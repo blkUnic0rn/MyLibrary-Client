@@ -3,9 +3,7 @@
 const authEvents = require('./auth/auth-events')
 
 $(() => {
-  // $('#change-pw').hide()
-  // $('#createNewBook').hide()
-  // $('#logout').hide()
   $('#top-aside').hide()
+  $('#bookshelf').hide()
   authEvents.addHandlers()
 })
