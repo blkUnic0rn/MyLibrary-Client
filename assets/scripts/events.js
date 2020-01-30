@@ -1,15 +1,27 @@
 'use strict'
-const api = require('./../api')
-const ui = require('./../ui')
-const getFormFields = require('./../../../lib/get-form-fields')
+const api = require('./api')
+const ui = require('./events-ui')
+const getFormFields = require('./../../lib/get-form-fields')
 
+const onCreateBook = (event) => {
+  event.preventDefault()
 
+  const form = event.target
+  const data = getFormFields(form)
 
-
-const addHandlers = () => {
-  $('$bookshelf').on('click', onClickCreate)
+  api.createBook(data)
+    .then(ui.onCreateBookSuccess)
+    .catch(ui.onCreateBookFailure)
 }
 
+const showCreateBookForm = () => {
+  $('#createbookForm').show()
+}
+
+const addHandlers = () => {
+  $('#createNewBook').on('click', showCreateBookForm)
+  $('#createBook').on('submit', onCreateBook)
+}
 
 module.exports = {
   addHandlers

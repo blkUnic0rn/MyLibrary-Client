@@ -25,5 +25,34 @@ body {
 
 #bookshelf {
   background-color: white;
+}
 
+legend {
+  color: white;
+}
+
+#createbookForm {
+  position: absolute;
+   width: 75%;
+   height: 75%;
+   margin: auto;
+  background-color: rgba(139, 69, 19, .4);
+}
+
+[type = 'radio'] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+[type=radio] + img {
+  cursor: pointer;
+}
+
+[type=radio]:checked + .imgSelect {
+  outline: 4px solid purple;
+}
+
+.heart > img {
+  border-radius: 5px;
 }

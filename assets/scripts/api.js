@@ -1,3 +1,4 @@
+
 'use strict'
 
 const config = require('./config')
@@ -40,9 +41,21 @@ const changePw = function (data) {
   })
 }
 
+const createBook = function (data) {
+  return $.ajax({
+    url: config.apiUrl + '/books',
+    method: 'POST',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data: data
+  })
+}
+
 module.exports = {
   signUp,
   signIn,
   signOut,
-  changePw
+  changePw,
+  createBook
 }
