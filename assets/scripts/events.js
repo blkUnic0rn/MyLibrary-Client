@@ -39,7 +39,7 @@ const showBookProfile = (event) => {
   const id = $(event.target).closest('section').data('id')
   api.getaBook(id)
     .then(ui.onShowBookSuccess)
-    .catch()
+    .catch(ui.onShowBookFailure)
 }
 
 const addHandlers = () => {

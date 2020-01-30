@@ -54,14 +54,20 @@ const createBook = function (data) {
 
 const getBooks = function () {
   return $.ajax({
-    url: config.apiUrl + '/books'
+    url: config.apiUrl + '/books',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
   })
 }
 
 const getaBook = function (id) {
   return $.ajax({
     url: config.apiUrl + '/books/' + id,
-    method: 'GET'
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
   })
 }
 

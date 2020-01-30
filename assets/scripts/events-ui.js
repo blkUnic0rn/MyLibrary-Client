@@ -22,9 +22,14 @@ const onShowBookSuccess = (data) => {
   console.log('Horray!')
 }
 
+const onShowBookFailure = (data) => {
+  console.log('Boooo you suck!')
+}
+
 module.exports = {
   onCreateBookSuccess,
   onCreateBookFailure,
   getBooksSuccess,
-  onShowBookSuccess
+  onShowBookSuccess,
+  onShowBookFailure
 }
