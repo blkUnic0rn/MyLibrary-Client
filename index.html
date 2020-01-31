@@ -22,18 +22,18 @@
     </nav>
     <form id='change-pw'>
       <h3>Change Password</h3>
-        <fieldset>
-          <input name='passwords[old]' type='password' placeholder='Old Password' />
-          <input name='passwords[new]' type='password' placeholder='New Password' />
-          <input type='submit' value='Change Password' />
-        </fieldset>
-      </form>
-      </header>
+      <fieldset>
+        <input name='passwords[old]' type='password' placeholder='Old Password' />
+        <input name='passwords[new]' type='password' placeholder='New Password' />
+        <input type='submit' value='Change Password' />
+      </fieldset>
+    </form>
+  </header>
 
   <div class='welcome'>
     <h1>Welcome to My Library</h1>
     <br>
-    <div class='messageboard'> </div>
+    <p class='messageboard'></p>
     <br>
     <div id='credButtons'>
       <button type="button" class="btn btn btn-light text-center" id="sign-up-modal" data-toggle="modal" data-target="#signUpModal"> Sign Up </button>
@@ -101,7 +101,7 @@
   </div>
   <div id="createbookForm">
     <!-- <div class="container rounded createbook mb-2 text-white" id="createbook"> -->
-  <form id='createBook'>
+    <form id='createBook'>
       <fieldset>
         <legend> New Book! </legend>
         <input name='book[title]' type='text' placeholder='Book Title' />
@@ -110,35 +110,35 @@
           <label class='heart'>
             <input type="radio" name="book[rating]" value="1">
             <div class='imgSelect'>
-            <img src='./public/oneheart.png' alt='one heart rating' width="250" height="350"/>
+              <img src='./public/oneheart.png' alt='one heart rating' width="250" height="350" />
             </div>
           </label>
           <br>
           <label class='heart'>
             <input type="radio" name="book[rating]" value="2">
             <div class='imgSelect'>
-            <img src='./public/twohearts.png' alt='two heart rating' width="250" height="350"/>
-          </div>
+              <img src='./public/twohearts.png' alt='two heart rating' width="250" height="350" />
+            </div>
           </label>
           <br>
           <label class='heart'>
             <input type="radio" name="book[rating]" value="3">
             <div class='imgSelect'>
-            <img src='./public/threehearts.png' alt='three heart rating' width="250" height="350"/>
-          </div>
+              <img src='./public/threehearts.png' alt='three heart rating' width="250" height="350" />
+            </div>
           </label>
           <br>
           <label class='heart'>
             <input type="radio" name="book[rating]" value="4">
             <div class='imgSelect'>
-            <img src='./public/fourhearts.png' alt='four heart rating' width="250" height="350"/>
-          </div>
+              <img src='./public/fourhearts.png' alt='four heart rating' width="250" height="350" />
+            </div>
           </label>
           <br>
           <label class='heart'>
             <input type="radio" name="book[rating]" value="5">
             <div class='imgSelect'>
-            <img src='./public/fivehearts.png' alt='five heart rating' width="250" height="350"/>
+              <img src='./public/fivehearts.png' alt='five heart rating' width="250" height="350" />
             </div>
           </label>
         </div>

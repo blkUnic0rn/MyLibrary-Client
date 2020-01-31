@@ -2,19 +2,20 @@
 const store = require('./store')
 
 const signUpSuccess = function (response) {
-  $('.messageboard').append('Successfully Signed Up!')
-  $('.messageboard').fadeOut(5600).append('').fadeIn()
+  $('.messageboard').append('Successfully Signed Up!').show()
+  $('.messageboard').delay(6900).hide()
   $('#sign-up').trigger('reset')
 }
 
 const signUpFailure = function () {
-  $('.messageboard').append('Unable to Sign You Up, Please Try Again.')
+  $('.messageboard').text('Unable to Sign You Up, Please Try Again.').show()
+  $('.messageboard').delay(6900).hide()
   $('#sign-up').trigger('reset')
 }
 
 const signInSuccess = function (response) {
-  $('.messageboard').append('Successfully Signed In!')
-  $('.messageboard').fadeOut(5600).append('').fadeIn()
+  $('.messageboard').show().text('Successfully Signed In!')
+  $('.messageboard').delay(6900).hide()
   store.user = response.user
   $('#sign-up-modal').hide()
   $('#sign-in-modal').hide()
@@ -23,39 +24,38 @@ const signInSuccess = function (response) {
 }
 
 const signInFailure = function () {
-  $('.messageboard').append('Unable to Sign In, Please Try Again.')
-  $('.messageboard').fadeOut(5600).append('').fadeIn()
+  $('.messageboard').text('Unable to Sign In, Please Try Again.').show()
+  $('.messageboard').delay(6900).hide()
   $('#sign-in').trigger('reset')
 }
 
 const signOutSuccess = function (response) {
-  $('.messageboard').append('Successfully Signed Out!')
-  $('.messageboard').fadeOut(5600).append('').fadeIn()
+  $('.messageboard').text('Successfully Signed Out!').show()
+  $('.messageboard').delay(6900).hide()
   $('#sign-in-modal').trigger('reset')
   $('#change-pw').hide()
   $('#logout').hide()
   $('#sign-up-modal').show()
   $('#sign-in-modal').show()
   $('#createNewBook').hide()
-  $('showbooks').hide()
+  $('#showbooks').hide()
 }
 
 const signOutFailure = function () {
-  $('.messageboard').append('Unable to Sign Out, Please Try Again.')
-  $('.messageboard').fadeOut(5600).append('').fadeIn()
+  $('.messageboard').text('Unable to Sign Out, Please Try Again.').show()
+  $('.messageboard').delay(6900).hide()
 }
 
 const changePwSuccess = function (response) {
-  $('.messageboard').append('Password Successfully Changed')
-  $('.messageboard').fadeOut(5600).append('').fadeIn()
-  $('.messageboard').append('')
+  $('.messageboard').text('Changed password successfully!').show()
+  $('.messageboard').delay(6900).hide()
   $('#change-pw').trigger('reset')
 }
 
 const changePwFailure = function () {
   $('#change-pw').trigger('reset')
-  $('.messageboard').append('Unable to Change Your Password. Please Try Again.')
-  $('.messageboard').fadeOut(5600).append('').fadeIn()
+  $('.messageboard').text('Unable to Change Your Password. Please Try Again.').show()
+  $('.messageboard').delay(6900).hide()
 }
 
 module.exports = {
