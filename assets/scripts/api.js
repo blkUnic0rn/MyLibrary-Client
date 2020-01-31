@@ -4,7 +4,7 @@
 const config = require('./config')
 const store = require('./store')
 
-const signUp = function (data) {
+const signUp = (data) => {
   return $.ajax({
     url: config.apiUrl + '/sign-up',
     method: 'POST',
@@ -12,7 +12,7 @@ const signUp = function (data) {
   })
 }
 
-const signIn = function (data) {
+const signIn = (data) => {
   return $.ajax({
     url: config.apiUrl + '/sign-in',
     method: 'POST',
@@ -20,7 +20,7 @@ const signIn = function (data) {
   })
 }
 
-const signOut = function (data) {
+const signOut = (data) => {
   return $.ajax({
     url: config.apiUrl + '/sign-out',
     method: 'DELETE',
@@ -30,7 +30,7 @@ const signOut = function (data) {
   })
 }
 
-const changePw = function (data) {
+const changePw = (data) => {
   return $.ajax({
     url: config.apiUrl + '/change-password',
     method: 'PATCH',
@@ -41,7 +41,7 @@ const changePw = function (data) {
   })
 }
 
-const createBook = function (data) {
+const createBook = (data) => {
   return $.ajax({
     url: config.apiUrl + '/books',
     method: 'POST',
@@ -52,7 +52,7 @@ const createBook = function (data) {
   })
 }
 
-const getBooks = function () {
+const getBooks = () => {
   return $.ajax({
     url: config.apiUrl + '/books',
     headers: {
@@ -61,7 +61,7 @@ const getBooks = function () {
   })
 }
 
-const getaBook = function (id) {
+const getaBook = (id) => {
   return $.ajax({
     url: config.apiUrl + '/books/' + id,
     method: 'GET',
@@ -81,6 +81,17 @@ const onRemoveBooks = (id) => {
   })
 }
 
+const updateBook = (data) => {
+  return $.ajax({
+    url: config.apiUrl + '/books/' + store.currentbook.id,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data: data
+  })
+}
+
 module.exports = {
   signUp,
   signIn,
@@ -89,5 +100,6 @@ module.exports = {
   createBook,
   getBooks,
   onRemoveBooks,
-  getaBook
+  getaBook,
+  updateBook
 }
