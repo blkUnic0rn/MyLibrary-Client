@@ -8,6 +8,7 @@ const onCreateBookSuccess = response => {
   store.book = response.book
   $('#createbookForm').hide()
   console.log('new book created')
+  $('#createBook').trigger('reset')
 }
 
 const onCreateBookFailure = response => {
@@ -17,6 +18,7 @@ const onCreateBookFailure = response => {
 const getBooksSuccess = (data) => {
   const myLibrary = showBooksList({ books: data.books })
   $('#bookshelf').html(myLibrary)
+  $('#createbookForm').hide()
 }
 
 const onShowBookSuccess = (data) => {
