@@ -42,15 +42,15 @@ const onShowBookSuccess = (data) => {
 
 const appendRatingImg = (rating) => {
   if (rating === 1) {
-    $('.individualBookRating').append("<img src='./../../public/oneheart.png' alt='one heart rating' width='350' height='150'/>")
+    $('.individualBookRating').append("<img src='./public/oneheart.png' alt='one heart rating' width='350' height='150'/>")
   } else if (rating === 2) {
-    $('.individualBookRating').append("<img src='./../../public/twohearts.png' alt='two heart rating' width='350' height='150'/>")
+    $('.individualBookRating').append("<img src='./public/twohearts.png' alt='two heart rating' width='350' height='150'/>")
   } else if (rating === 3) {
-    $('.individualBookRating').append("<img src='./../../public/threehearts.png' alt='three heart rating' width='350' height='150'/>")
+    $('.individualBookRating').append("<img src='./public/threehearts.png' alt='three heart rating' width='350' height='150'/>")
   } else if (rating === 4) {
-    $('.individualBookRating').append("<img src='./../../public/fourhearts.png' alt='four heart rating' width='350' height='150'/>")
+    $('.individualBookRating').append("<img src='./public/fourhearts.png' alt='four heart rating' width='350' height='150'/>")
   } else if (rating === 5) {
-    $('.individualBookRating').append("<img src='./../../public/fivehearts.png' alt='five heart rating' width='350' height='150'/>")
+    $('.individualBookRating').append("<img src='./public/fivehearts.png' alt='five heart rating' width='350' height='150'/>")
   } else {
     $('.messageboard').append('Invalid rating number')
     $('.messageboard').fadeOut(5600).append('').fadeIn()
