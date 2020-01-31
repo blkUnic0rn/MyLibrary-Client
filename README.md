@@ -31,16 +31,17 @@ API Repo: https://github.com/Kayla-SA-W/MyLibrary
 * jQuery
 * HTML/CSS
 * Javascript
-
+* Bootstrap
+* Handlebars
+* SCSS
 
 ## Unsolved Problems and Stretch Goals
 
 
-
 ## Images
 ### Wireframes:
-![wireframe image 1](./public/img/Wireframe-onload.jpeg)
+[wireframe image 1](./public/img/Wireframe-onload.jpeg)
 
-![wireframe image 2](./public/img/Wireframe-signedinview.jpeg)
+[wireframe image 2](./public/img/Wireframe-signedinview.jpeg)
 
-![wireframe image 3](./public/img/Wireframe-bookview.jpeg)
+[wireframe image 3](./public/img/Wireframe-bookview.jpeg)
