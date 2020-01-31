@@ -46,10 +46,22 @@ const onShowBookFailure = (data) => {
   console.log('Boooo you suck!')
 }
 
+const onRemoveSuccess = () => {
+  $('.singleBook').empty()
+    .then(onShowBookSuccess)
+    .catch(onShowBookFailure)
+}
+
+const onRemoveFailure = () => {
+  console.log('oh hey! You didnt remove a book')
+}
+
 module.exports = {
   onCreateBookSuccess,
   onCreateBookFailure,
   getBooksSuccess,
   onShowBookSuccess,
-  onShowBookFailure
+  onShowBookFailure,
+  onRemoveSuccess,
+  onRemoveFailure
 }

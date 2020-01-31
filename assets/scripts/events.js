@@ -46,7 +46,8 @@ const addHandlers = () => {
   $('#createNewBook').on('click', showCreateBookForm)
   $('#createBook').on('submit', onCreateBook)
   $('#showbooks').on('click', onGetBooks)
-  $('#bookshelf').on('click', 'section', showBookProfile)
+  $('#bookshelf').on('click', '.bookList', showBookProfile)
+  $('#bookshelf').on('click', '#destroyBook', toRemove)
 }
 
 module.exports = {
