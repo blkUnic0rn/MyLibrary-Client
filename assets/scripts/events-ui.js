@@ -2,6 +2,7 @@
 const showBooksList = require('./templates/booklist.handlebars')
 const showSingleBook = require('./templates/bookProfile.handlebars')
 const store = require('./store')
+const api = require('./api')
 
 const onCreateBookSuccess = response => {
   store.book = response.book
@@ -46,10 +47,15 @@ const onShowBookFailure = (data) => {
   console.log('Boooo you suck!')
 }
 
-const onRemoveSuccess = () => {
+const clearBooks = () => {
   $('.singleBook').empty()
-    .then(onShowBookSuccess)
-    .catch(onShowBookFailure)
+}
+
+const onRemoveSuccess = () => {
+  clearBooks()
+  api.getBooks()
+    .then(getBooksSuccess)
+    .catch(onRemoveFailure)
 }
 
 const onRemoveFailure = () => {

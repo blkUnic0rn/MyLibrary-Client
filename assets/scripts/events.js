@@ -29,7 +29,7 @@ const onGetBooks = (event) => {
 }
 
 const toRemove = (event) => {
-  const id = $(event.target).data('id')
+  const id = $(event.target).closest('section').data('id')
   api.onRemoveBooks(id)
     .then(ui.onRemoveSuccess)
     .catch(ui.onRemoveFailure)
