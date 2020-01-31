@@ -8,12 +8,14 @@ const api = require('./api')
 const onCreateBookSuccess = data => {
   store.book = data.book
   $('#createbookForm').hide()
-  console.log('new book created')
   $('#createBook').trigger('reset')
+  $('.messageboard').append('New Book Created')
+  $('.messageboard').fadeOut(5600)
 }
 
 const onCreateBookFailure = data => {
-  console.log('could not create book')
+  $('.messageboard').append('Could Not Create New Book')
+  $('.messageboard').fadeOut(5600)
 }
 
 const getBooksSuccess = (data) => {
@@ -23,7 +25,8 @@ const getBooksSuccess = (data) => {
 }
 
 const failure = (data) => {
-  console.log('Unable to complete that request')
+  $('.messageboard').append('Unable to Complete that Request')
+  $('.messageboard').fadeOut(5600)
 }
 
 const onShowBookSuccess = (data) => {
@@ -45,12 +48,14 @@ const appendRatingImg = (rating) => {
   } else if (rating === 5) {
     $('.individualBookRating').append("<img src='./../public/fivehearts.png' alt='five heart rating' width='350' height='150'/>")
   } else {
-    console.log('something went wrong')
+    $('.messageboard').append('Invalid rating number')
+    $('.messageboard').fadeOut(5600)
   }
 }
 
 const onShowBookFailure = (data) => {
-  console.log('Boooo you suck!')
+  $('.messageboard').append('Unable to Complete that Request')
+  $('.messageboard').fadeOut(5600)
 }
 
 const clearBooks = () => {
@@ -65,7 +70,8 @@ const onRemoveSuccess = (data) => {
 }
 
 const onRemoveFailure = () => {
-  console.log('oh hey! You didnt remove a book')
+  $('.messageboard').append('Unable to Delete Book')
+  $('.messageboard').fadeOut(5600)
 }
 
 const onFindUpdateBookSuccess = (data) => {
@@ -77,11 +83,13 @@ const onFindUpdateBookSuccess = (data) => {
 }
 
 const onFindUpdateBookFailure = (data) => {
-  console.log('oh man! the update book form didnt populate')
+  $('.messageboard').append('Unable to Populate Update Form')
+  $('.messageboard').fadeOut(5600)
 }
 
 const onUpdateSuccess = (data) => {
-  console.log('Your book was updated successfully')
+  $('.messageboard').append('Your Book was Updated Successfully')
+  $('.messageboard').fadeOut(5600)
   $('#updateBook').empty()
   $('#updateBookForm').hide()
   $('#bookshelf').show()

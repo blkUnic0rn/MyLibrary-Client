@@ -2,34 +2,36 @@
 const store = require('./store')
 
 const signUpSuccess = function (response) {
-  $('#signUpMessage').text('successfully signed up!')
+  $('.messageboard').append('Successfully Signed Up!')
+  $('.messageboard').fadeOut(5600)
   $('#sign-up').trigger('reset')
 }
 
 const signUpFailure = function () {
-  $('#signUpMessage').text('sign up failure!')
+  $('.messageboard').append('Unable to Sign You Up, Please Try Again.')
+  $('.messageboard').fadeOut(5600)
   $('#sign-up').trigger('reset')
 }
 
 const signInSuccess = function (response) {
-  $('#signInMessage').text('successfully Signed In!')
+  $('.messageboard').append('Successfully Signed In!')
+  $('.messageboard').fadeOut(5600)
   store.user = response.user
   $('#sign-up-modal').hide()
   $('#sign-in-modal').hide()
-  // $('change-pw').show()
-  // $('#createNewBook').show()
-  // $('#logout').show()
   $('#top-aside').show()
   $('#sign-in').trigger('reset')
 }
 
 const signInFailure = function () {
-  $('#signInMessage').text('Unable to Sign In!')
+  $('.messageboard').append('Unable to Sign In, Please Try Again.')
+  $('.messageboard').fadeOut(5600)
   $('#sign-in').trigger('reset')
 }
 
 const signOutSuccess = function (response) {
-  $('#logoutMessage').text('successfully signed out!')
+  $('.messageboard').append('Successfully Signed Out!')
+  $('.messageboard').fadeOut(5600)
   $('#sign-in-modal').trigger('reset')
   $('#change-pw').hide()
   $('#logout').hide()
@@ -39,17 +41,20 @@ const signOutSuccess = function (response) {
 }
 
 const signOutFailure = function () {
-  $('#logoutMessage').text('could not sign out!')
+  $('.messageboard').append('Unable to Sign Out, Please Try Again.')
+  $('.messageboard').fadeOut(5600)
 }
 
 const changePwSuccess = function (response) {
-  console.log('success')
-  // $('#change-pw').trigger('reset')
+  $('.messageboard').append('Password Successfully Changed')
+  $('.messageboard').fadeOut(5600)
+  $('#change-pw').trigger('reset')
 }
 
 const changePwFailure = function () {
-  // $('#change-pw').trigger('reset')
-  console.log('fail')
+  $('#change-pw').trigger('reset')
+  $('.messageboard').append('Unable to Change Your Password. Please Try Again.')
+  $('.messageboard').fadeOut(5600)
 }
 
 module.exports = {
