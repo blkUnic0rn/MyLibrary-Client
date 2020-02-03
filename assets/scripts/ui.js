@@ -21,6 +21,7 @@ const signInSuccess = function (response) {
   $('#sign-in-modal').hide()
   $('#top-aside').show()
   $('#sign-in').trigger('reset')
+  $('.welcome').hide()
 }
 
 const signInFailure = function () {
@@ -39,6 +40,9 @@ const signOutSuccess = function (response) {
   $('#sign-in-modal').show()
   $('#createNewBook').hide()
   $('#showbooks').hide()
+  $('#bookshelf').hide()
+  $('.welcome').show()
+  $('.top-aside').hide()
 }
 
 const signOutFailure = function () {

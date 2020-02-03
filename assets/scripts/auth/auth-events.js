@@ -52,6 +52,9 @@ const addHandlers = () => {
   $('#sign-in-modal').on('click', function (a) {
     a.preventDefault()
   })
+  $('#change-pw-modal').on('click', function (o) {
+    o.preventDefault()
+  })
 }
 
 module.exports = {
