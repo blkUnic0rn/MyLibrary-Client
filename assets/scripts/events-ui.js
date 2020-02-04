@@ -22,7 +22,6 @@ const onCreateBookFailure = data => {
 }
 
 const getBooksSuccess = (data) => {
-  console.log(data.books.length)
   store.bookcount = data.books.length
   const myLibrary = showBooksList({
     books: data.books
