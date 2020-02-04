@@ -124,19 +124,8 @@ nav {
 
 .messageboard {
   background-color: rgba(61,39,0, .4);
-  .signup,
-  .signin,
-  .changepw,
-  .signout,
-  .newbook,
-  .failure,
-  .rating,
-  .removebook,
-  .updatebook {
-    visibility: visible;
+  #message {
     text-align: center;
-    display:  contents;
     color: white;
-    text-align: center;
   }
 }

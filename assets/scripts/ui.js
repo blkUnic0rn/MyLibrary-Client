@@ -2,32 +2,36 @@
 const store = require('./store')
 
 const signUpSuccess = function (response) {
-  $('.signup').append('Successfully Signed Up!')
+  $('#message').text('Successfully Signed Up!')
   $('#sign-up').trigger('reset')
+  setTimeout(() => $('#message').text(' '), 3000)
 }
 
 const signUpFailure = function () {
-  $('.signup').text('Unable to Sign You Up, Please Try Again.')
+  $('#message').text('Unable to Sign You Up, Please Try Again.')
   $('#sign-up').trigger('reset')
+  setTimeout(() => $('#message').text(' '), 3000)
 }
 
 const signInSuccess = function (response) {
-  $('.signin').text('Successfully Signed In!')
+  $('#message').text('Successfully Signed In!')
   store.user = response.user
   $('#sign-up-modal').hide()
   $('#sign-in-modal').hide()
   $('#top-aside').show()
   $('#sign-in').trigger('reset')
   $('.welcome').hide()
+  setTimeout(() => $('#message').text(' '), 3000)
 }
 
 const signInFailure = function () {
-  $('.signin').text('Unable to Sign In, Please Try Again.')
+  $('#message').text('Unable to Sign In, Please Try Again.')
   $('#sign-in').trigger('reset')
+  setTimeout(() => $('#message').text(' '), 3000)
 }
 
 const signOutSuccess = function (response) {
-  $('.signout').text('Successfully Signed Out!')
+  $('#message').text('Successfully Signed Out!')
   $('#sign-in-modal').trigger('reset')
   $('#change-pw').hide()
   $('#logout').hide()
@@ -38,20 +42,24 @@ const signOutSuccess = function (response) {
   $('#bookshelf').hide()
   $('.welcome').show()
   $('.top-aside').hide()
+  setTimeout(() => $('#message').text(' '), 3000)
 }
 
 const signOutFailure = function () {
-  $('.signout').text('Unable to Sign Out, Please Try Again.')
+  $('#message').text('Unable to Sign Out, Please Try Again.')
+  setTimeout(() => $('#message').text(' '), 3000)
 }
 
 const changePwSuccess = function (response) {
-  $('.changepw').text('Changed password successfully!')
+  $('#message').text('Changed password successfully!')
   $('#change-pw').trigger('reset')
+  setTimeout(() => $('#message').text(' '), 3000)
 }
 
 const changePwFailure = function () {
   $('#change-pw').trigger('reset')
-  $('.changepw').text('Unable to Change Your Password. Please Try Again.')
+  $('#message').text('Unable to Change Your Password. Please Try Again.')
+  setTimeout(() => $('#message').text(' '), 3000)
 }
 
 module.exports = {

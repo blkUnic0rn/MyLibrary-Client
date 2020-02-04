@@ -12,11 +12,13 @@ const onCreateBookSuccess = data => {
   scripts.checkReaderStatus()
   $('#createbookForm').hide()
   $('#createBook').trigger('reset')
-  $('.newbook').append('New Book Created')
+  $('#message').text('New Book Created')
+  setTimeout(() => $('#message').text(' '), 3000)
 }
 
 const onCreateBookFailure = data => {
-  $('.newbook').append('Could Not Create New Book')
+  $('#message').text('Could Not Create New Book')
+  setTimeout(() => $('#message').text(' '), 3000)
 }
 
 const getBooksSuccess = (data) => {
@@ -28,7 +30,8 @@ const getBooksSuccess = (data) => {
 }
 
 const failure = (data) => {
-  $('.failure').append('Unable to Complete that Request')
+  $('#message').text('Unable to Complete that Request')
+  setTimeout(() => $('#message').text(' '), 3000)
 }
 
 const onShowBookSuccess = (data) => {
@@ -51,12 +54,14 @@ const appendRatingImg = (rating) => {
   } else if (rating === 5) {
     $('.individualBookRating').append("<img src='./public/fivehearts.png' alt='five heart rating' width='350' height='150'/>")
   } else {
-    $('.rating').append('Invalid rating number')
+    $('#message').text('Invalid rating number')
   }
+  setTimeout(() => $('#message').text(' '), 3000)
 }
 
 const onShowBookFailure = (data) => {
-  $('.failure').append('Unable to Complete that Request')
+  $('#message').text('Unable to Complete that Request')
+  setTimeout(() => $('#message').text(' '), 3000)
 }
 
 const clearBooks = () => {
@@ -71,7 +76,8 @@ const onRemoveSuccess = (data) => {
 }
 
 const onRemoveFailure = () => {
-  $('.failure').append('Unable to Delete Book')
+  $('#message').text('Unable to Delete Book')
+  setTimeout(() => $('#message').text(' '), 3000)
 }
 
 const onFindUpdateBookSuccess = (data) => {
@@ -85,14 +91,16 @@ const onFindUpdateBookSuccess = (data) => {
 }
 
 const onFindUpdateBookFailure = (data) => {
-  $('.failure').append('Unable to Populate Update Form')
+  $('#message').append('Unable to Populate Update Form')
+  setTimeout(() => $('#message').text(' '), 3000)
 }
 
 const onUpdateSuccess = (data) => {
-  $('.updatebook').append('Your Book was Updated Success')
+  $('#message').text('Your Book was Updated Successfully')
   $('#updateBook').empty()
   $('#updateBookForm').hide()
   $('#bookshelf').show()
+  setTimeout(() => $('#message').text(' '), 3000)
 
   api.getBooks(data)
     .then(getBooksSuccess)
