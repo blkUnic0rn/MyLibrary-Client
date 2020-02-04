@@ -2,13 +2,13 @@
 const showBooksList = require('./templates/booklist.handlebars')
 const showSingleBook = require('./templates/bookProfile.handlebars')
 const updateBookForm = require('./templates/updateBookForm.handlebars')
+const readercheck = require('./pagescripts')
 const store = require('./store')
 const api = require('./api')
 const scripts = require('./pagescripts')
 
 const onCreateBookSuccess = data => {
   store.book = data.book
-  store.bookcount += 1
   scripts.checkReaderStatus()
   $('#createbookForm').hide()
   $('#createBook').trigger('reset')
@@ -22,11 +22,14 @@ const onCreateBookFailure = data => {
 }
 
 const getBooksSuccess = (data) => {
+  console.log(data.books.length)
+  store.bookcount = data.books.length
   const myLibrary = showBooksList({
     books: data.books
   })
   $('#bookshelf').html(myLibrary)
   $('#createbookForm').hide()
+  readercheck.checkReaderStatus()
 }
 
 const failure = (data) => {

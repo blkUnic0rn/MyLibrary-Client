@@ -15,7 +15,12 @@ const checkReaderStatus = () => {
 }
 
 const printReaderStatus = () => {
-  console.log(store.readerStatus)
+  $('#readerBookcount').text('You have read ' + store.bookcount + ' book(s) so far')
+  if (store.readerStatus === 'Amature' || store.readerStatus === 'Average') {
+    $('#readerStatus').text('You are an ' + store.readerStatus + ' reader!')
+  } else {
+    $('#readerStatus').text('You are a ' + store.readerStatus + ' reader!')
+  }
 }
 
 module.exports = {
