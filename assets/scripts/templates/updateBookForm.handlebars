@@ -1,10 +1,12 @@
 {{#with book as |book|}}
 <form id='UpdateBook'>
     <fieldset>
-      <legend> Update Book! </legend>
+      <h3 class='text-center'> Update Book! </h3>
       <input class='booktitle' name='book[title]' type='text' placeholder='Book Title' value= {{book.title}} />
       <input name='book[author]' type='text' placeholder='Book Author' value= {{book.author}} />
+      <br>
       <div id='rating'>
+        <h3 class='text-center'> Rating </h3>
         <label class='heart'>
           <input type="radio" name="book[rating]" value="1">
           <div class='imgSelect'>
@@ -40,7 +42,7 @@
           </div>
         </label>
       </div>
-      <input class='bookreview' name='book[review]' type='text' maxlength='500' placeholder='Review...' />
+      <textarea class='bookreview' rows="5" cols="65" name='book[review]' maxlength='500' placeholder='Review...' /></textarea>
       <br>
       <input type='submit' value='update' />
     </fieldset>

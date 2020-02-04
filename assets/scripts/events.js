@@ -1,8 +1,11 @@
 'use strict'
 const api = require('./api')
 const ui = require('./events-ui')
-const store = require('./store')
 const getFormFields = require('./../../lib/get-form-fields')
+const store = require('./store')
+
+store.bookcount = 0
+store.readerStatus = 'Amature'
 
 const onCreateBook = (event) => {
   event.preventDefault()

@@ -4,18 +4,19 @@ const showSingleBook = require('./templates/bookProfile.handlebars')
 const updateBookForm = require('./templates/updateBookForm.handlebars')
 const store = require('./store')
 const api = require('./api')
+const scripts = require('./pagescripts')
 
 const onCreateBookSuccess = data => {
   store.book = data.book
+  store.bookcount += 1
+  scripts.checkReaderStatus()
   $('#createbookForm').hide()
   $('#createBook').trigger('reset')
-  $('.messageboard').append('New Book Created')
-  $('.messageboard').fadeOut(5600).append('').fadeIn()
+  $('.newbook').append('New Book Created')
 }
 
 const onCreateBookFailure = data => {
-  $('.messageboard').append('Could Not Create New Book')
-  $('.messageboard').fadeOut(5600).append('').fadeIn()
+  $('.newbook').append('Could Not Create New Book')
 }
 
 const getBooksSuccess = (data) => {
@@ -27,8 +28,7 @@ const getBooksSuccess = (data) => {
 }
 
 const failure = (data) => {
-  $('.messageboard').append('Unable to Complete that Request')
-  $('.messageboard').fadeOut(5600).append('').fadeIn()
+  $('.failure').append('Unable to Complete that Request')
 }
 
 const onShowBookSuccess = (data) => {
@@ -36,7 +36,6 @@ const onShowBookSuccess = (data) => {
     book: data.book
   })
   $('#bookshelf').html(showBook)
-  console.log(data.book.rating)
   appendRatingImg(data.book.rating)
 }
 
@@ -52,14 +51,12 @@ const appendRatingImg = (rating) => {
   } else if (rating === 5) {
     $('.individualBookRating').append("<img src='./public/fivehearts.png' alt='five heart rating' width='350' height='150'/>")
   } else {
-    $('.messageboard').append('Invalid rating number')
-    $('.messageboard').fadeOut(5600).append('').fadeIn()
+    $('.rating').append('Invalid rating number')
   }
 }
 
 const onShowBookFailure = (data) => {
-  $('.messageboard').append('Unable to Complete that Request')
-  $('.messageboard').fadeOut(5600).append('').fadeIn()
+  $('.failure').append('Unable to Complete that Request')
 }
 
 const clearBooks = () => {
@@ -74,8 +71,7 @@ const onRemoveSuccess = (data) => {
 }
 
 const onRemoveFailure = () => {
-  $('.messageboard').append('Unable to Delete Book')
-  $('.messageboard').fadeOut(5600).append('').fadeIn()
+  $('.failure').append('Unable to Delete Book')
 }
 
 const onFindUpdateBookSuccess = (data) => {
@@ -89,13 +85,11 @@ const onFindUpdateBookSuccess = (data) => {
 }
 
 const onFindUpdateBookFailure = (data) => {
-  $('.messageboard').append('Unable to Populate Update Form')
-  $('.messageboard').fadeOut(5600).append('').fadeIn()
+  $('.failure').append('Unable to Populate Update Form')
 }
 
 const onUpdateSuccess = (data) => {
-  $('.messageboard').append('Your Book was Updated Success')
-  $('.messageboard').fadeOut(5600).append('').fadeIn()
+  $('.updatebook').append('Your Book was Updated Success')
   $('#updateBook').empty()
   $('#updateBookForm').hide()
   $('#bookshelf').show()

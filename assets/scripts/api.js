@@ -55,6 +55,7 @@ const createBook = (data) => {
 const getBooks = () => {
   return $.ajax({
     url: config.apiUrl + '/books',
+    method: 'GET',
     headers: {
       Authorization: 'Token token=' + store.user.token
     }

@@ -16,16 +16,17 @@
 <body>
   <header id='top-aside'>
     <nav class="navbar">
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler text-white" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
          Nav
       </button>
     </nav>
     <div class="collapse" id="navbarToggleExternalContent">
      <div class="p-4 collapsedBar">
-        <button type="button" class="btn btn btn-light text-center" id='logout'> Logout </button>
-        <button type="button" class="btn btn btn-light text-center" data-toggle="modal" data-target="#change-pw-modal"> Change Password </button>
-        <button type="button" class="btn btn btn-light text-center" id='createNewBook'> Create </button>
-        <button type="button" class="btn btn btn-light text-center" id='showbooks'> Get All Books </button>
+        <button type="button" class="btn btn-light text-center" id='logout'> Logout </button>
+        <button type="button" class="btn btn-light text-center" data-toggle="modal" data-target="#change-pw-modal"> Change Password </button>
+        <button type="button" class="btn btn-light text-center" id='createNewBook'> Create </button>
+        <button type="button" class="btn btn-light text-center" id='showbooks'> Get All Books </button>
+        <!-- <button type="button" class="btn btn-light text-center" id='favoriteBooks'> Get Favorite Books </button> -->
       </div>
     </div>
   </header>
@@ -33,13 +34,16 @@
   <div class='welcome'>
     <h1>Welcome to My Library</h1>
     <br>
-    <p class='messageboard'></p>
-    <br>
     <div id='credButtons'>
       <button type="button" class="btn btn btn-light text-center" id="sign-up-modal" data-toggle="modal" data-target="#signUpModal"> Sign Up </button>
       <button type="button" class="btn btn btn-light text-center" id="sign-in-modal" data-toggle="modal" data-target="#signInModal"> Sign In </button>
     </div>
   </div>
+<!--message board -->
+<div class='messageboard'>
+  <p class='message'></p>
+</div>
+
   <!-- sign up modal-->
   <div class="modal fade" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="signUpModal" aria-hidden="true">
     <!-- inside the box of the modal -->
@@ -103,10 +107,12 @@
     <!-- <div class="container rounded createbook mb-2 text-white" id="createbook"> -->
     <form id='createBook'>
       <fieldset>
-        <legend> New Book! </legend>
+        <h3 class='text-center'> New Book! </h3>
         <input name='book[title]' type='text' placeholder='Book Title' />
         <input name='book[author]' type='text' placeholder='Author Name' />
-        <div id='rating'>
+        <br>
+        <div id='rating' class='d-flex justify-content-center flex-column'>
+          <h3 class='text-center'> Rating </h3>
           <label class='heart'>
             <input type="radio" name="book[rating]" value="1">
             <div class='imgSelect'>
@@ -142,7 +148,7 @@
             </div>
           </label>
         </div>
-        <input class='bookreview' name='book[review]' type='text' maxlength='500' placeholder='Review...' />
+        <textarea class='bookreview' rows="5" cols="65" name='book[review]' maxlength='500' placeholder='Review...' /></textarea>
         <br>
         <input type='submit' value='create' />
       </fieldset>
@@ -178,7 +184,7 @@
   <div id='bookpage' class='rounded'></div>
   <div id='updateBookForm' class='rounded'></div>
 
-  <footer>
+  <footer class='page-footer font-small blue fixed-bottom'>
     <p> hello this is a footer to take up space </p>
   </footer>
 

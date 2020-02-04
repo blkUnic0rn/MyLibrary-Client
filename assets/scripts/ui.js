@@ -2,20 +2,17 @@
 const store = require('./store')
 
 const signUpSuccess = function (response) {
-  $('.messageboard').append('Successfully Signed Up!').show()
-  $('.messageboard').delay(6900).hide()
+  $('.signup').append('Successfully Signed Up!')
   $('#sign-up').trigger('reset')
 }
 
 const signUpFailure = function () {
-  $('.messageboard').text('Unable to Sign You Up, Please Try Again.').show()
-  $('.messageboard').delay(6900).hide()
+  $('.signup').text('Unable to Sign You Up, Please Try Again.')
   $('#sign-up').trigger('reset')
 }
 
 const signInSuccess = function (response) {
-  $('.messageboard').show().text('Successfully Signed In!')
-  $('.messageboard').delay(6900).hide()
+  $('.signin').text('Successfully Signed In!')
   store.user = response.user
   $('#sign-up-modal').hide()
   $('#sign-in-modal').hide()
@@ -25,14 +22,12 @@ const signInSuccess = function (response) {
 }
 
 const signInFailure = function () {
-  $('.messageboard').text('Unable to Sign In, Please Try Again.').show()
-  $('.messageboard').delay(6900).hide()
+  $('.signin').text('Unable to Sign In, Please Try Again.')
   $('#sign-in').trigger('reset')
 }
 
 const signOutSuccess = function (response) {
-  $('.messageboard').text('Successfully Signed Out!').show()
-  $('.messageboard').delay(6900).hide()
+  $('.signout').text('Successfully Signed Out!')
   $('#sign-in-modal').trigger('reset')
   $('#change-pw').hide()
   $('#logout').hide()
@@ -46,20 +41,17 @@ const signOutSuccess = function (response) {
 }
 
 const signOutFailure = function () {
-  $('.messageboard').text('Unable to Sign Out, Please Try Again.').show()
-  $('.messageboard').delay(6900).hide()
+  $('.signout').text('Unable to Sign Out, Please Try Again.')
 }
 
 const changePwSuccess = function (response) {
-  $('.messageboard').text('Changed password successfully!').show()
-  $('.messageboard').delay(6900).hide()
+  $('.changepw').text('Changed password successfully!')
   $('#change-pw').trigger('reset')
 }
 
 const changePwFailure = function () {
   $('#change-pw').trigger('reset')
-  $('.messageboard').text('Unable to Change Your Password. Please Try Again.').show()
-  $('.messageboard').delay(6900).hide()
+  $('.changepw').text('Unable to Change Your Password. Please Try Again.')
 }
 
 module.exports = {
