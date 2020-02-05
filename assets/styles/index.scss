@@ -28,6 +28,8 @@ header {
 body {
   background-image: url('./public/Shelf.png');
   background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
 }
 
 #bookshelf {

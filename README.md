@@ -53,6 +53,8 @@ I would eventually like to add the following abilities to my project:
 
 
 ## Images
+Images for this project were drawn by Carlie Williams. Please checkout her portfolio at https://www.carlieann.co/
+
 ### Wireframes:
 ![wireframe image 1](./public/Wireframe-onload.jpeg)
 
