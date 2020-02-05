@@ -2,7 +2,8 @@
 
 const authEvents = require('./auth/auth-events')
 const events = require('./events')
-// const fave = require('./favorites/events')
+const fave = require('./favorites/events')
+const recc = require('./recommendations/events')
 
 $(() => {
   $('#top-aside').hide()
@@ -10,5 +11,6 @@ $(() => {
   $('#updateBookForm').hide()
   authEvents.addHandlers()
   events.addHandlers()
-  // fave.addHandlers()
+  fave.addHandlers()
+  recc.addHandlers()
 })

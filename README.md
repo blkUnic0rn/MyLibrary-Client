@@ -7,6 +7,8 @@ Client Repo: https://github.com/Kayla-SA-W/MyLibrary-Client
 
 API Repo: https://github.com/Kayla-SA-W/MyLibrary
 
+Deployed Heroku: https://mylibrary-app-kw.herokuapp.com/
+
 
 
 ## Planning Story

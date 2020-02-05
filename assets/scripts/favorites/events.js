@@ -16,8 +16,10 @@ const getFavoriteBooks = (event) => {
 }
 
 const findCurrentBook = (event) => {
-  const id = $(event.target).closest('section').data('id')
-  booksApi.getaBook(id)
+  const bookid = $(event.target).closest('section').data('id')
+  console.log(bookid)
+  console.log(store.user.id)
+  booksApi.getaBook(bookid)
     .then(ui.onFindCurrentBookSuccess)
     .catch()
 }

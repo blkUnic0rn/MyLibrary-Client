@@ -41,19 +41,21 @@ const onSignOut = function (event) {
     .catch(ui.signOutFailure)
 }
 
+const showPwForm = () => {
+  $('#pwform').show()
+}
+
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp)
   $('#sign-in').on('submit', onSignIn)
   $('#logout').on('click', onSignOut)
+  $('#changePwButton').on('click', showPwForm)
   $('#change-pw').on('submit', onChangePw)
   $('#sign-up-modal').on('click', function (e) {
     e.preventDefault()
   })
   $('#sign-in-modal').on('click', function (a) {
     a.preventDefault()
-  })
-  $('#change-pw-modal').on('click', function (o) {
-    o.preventDefault()
   })
 }
 

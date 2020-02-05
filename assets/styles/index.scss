@@ -26,11 +26,12 @@ header {
 }
 
 body {
-  background-image: url("./public/bookshelfimg.jpg");
+  background-image: url('./public/Shelf.png');
+  background-repeat: no-repeat;
 }
 
 #bookshelf {
-  background-color: rgba(139, 69, 19, .2555);
+  background-color: rgba(232, 201, 180, .1);
   width: 75%;
   height: 75%;
   margin: auto auto 45px;
@@ -41,7 +42,7 @@ legend {
 }
 
 footer {
-  background-color: rgba(139, 69, 19, .8);
+  background-color: rgb(94, 60, 35);
   margin-top: 50px;
 }
 
@@ -99,6 +100,7 @@ footer {
 
 section {
   color: white;
+  background-color: pink;
   border: 2px dotted pink;
   text-align: center;
   width: 75%;
@@ -107,28 +109,28 @@ section {
 }
 
 section:hover {
-  background-color: rgba(139, 69, 19, .6);
+  background-color: rgba(94, 60, 35, .6);
 }
 
 nav {
-  background-color: rgba(61,39,0, .4);
+  background-color: rgba(94, 60, 35, 1);
 }
 
 .navbar-toggler {
-  background-color: rgba(61,39,0, .6);
+  background-color: rgba(94,60,35, 1);
 }
 
 .collapsedBar {
-  background-color: rgba(61,39,0, .4);
+  background-color: rgb(94, 60, 35);
 }
 
 .messageboard {
-  background-color: rgba(61,39,0, .4);
+  background-color: white;
 
   #message,
   #readerBookcount,
   #readerStatus {
     text-align: center;
-    color: white;
+    color: rgb(94,60,35);
   }
 }

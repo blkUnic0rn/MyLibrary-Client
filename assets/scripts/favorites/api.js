@@ -12,7 +12,7 @@ const getFavoriteBooks = (data) => {
   })
 }
 
-const createFavorite = (data) => {
+const createFavorite = (bookid) => {
   return $.ajax({
     url: config.apiUrl + '/favorites',
     method: 'POST',
@@ -22,7 +22,7 @@ const createFavorite = (data) => {
     data: {
       'favorite': {
         'user_id': store.user.id,
-        'book_id': store.currentbook.id
+        'book_id': bookid
       }
     }
   })

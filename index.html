@@ -17,16 +17,25 @@
   <header id='top-aside'>
     <nav class="navbar">
       <button class="navbar-toggler text-white" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-         Nav
+        Nav
       </button>
     </nav>
     <div class="collapse" id="navbarToggleExternalContent">
-     <div class="p-4 collapsedBar">
+      <div class="p-4 collapsedBar">
         <button type="button" class="btn btn-light text-center" id='logout'> Logout </button>
-        <button type="button" class="btn btn-light text-center" data-toggle="modal" data-target="#change-pw-modal"> Change Password </button>
+        <button type="button" class="btn btn-light text-center" id='changePwButton'> Change Password </button>
         <button type="button" class="btn btn-light text-center" id='createNewBook'> Create </button>
         <button type="button" class="btn btn-light text-center" id='showbooks'> Get All Books </button>
-        <!-- <button type="button" class="btn btn-light text-center" id='favoriteBooks'> Get Favorite Books </button> -->
+        <button type="button" class="btn btn-light text-center" id='recommendedBooks'> Get Book Recommendations </button>
+        <div id='pwform'>
+          <form id='change-pw'>
+            <fieldset>
+              <input name='passwords[old]' type='password' placeholder='Old Password' />
+              <input name='passwords[new]' type='password' placeholder='New Password' />
+              <input type='submit' value='Save' />
+            </fieldset>
+          </form>
+        </div>
       </div>
     </div>
   </header>
@@ -39,12 +48,12 @@
       <button type="button" class="btn btn btn-light text-center" id="sign-in-modal" data-toggle="modal" data-target="#signInModal"> Sign In </button>
     </div>
   </div>
-<!--message board -->
-<div class='messageboard'>
-  <h3 id='readerBookcount'> </h3>
-  <h3 id='readerStatus'> </h3>
-  <p id='message'> </p>
-</div>
+  <!--message board -->
+  <div class='messageboard'>
+    <h3 id='readerBookcount'> </h3>
+    <h3 id='readerStatus'> </h3>
+    <p id='message'> </p>
+  </div>
 
 
   <!-- sign up modal-->
@@ -157,31 +166,6 @@
       </fieldset>
     </form>
   </div>
-
-  <!-- Change PW Modal -->
-  <div class="modal fade" id="change-pw-modal" tabindex="-1" role="dialog" aria-labelledby="changepwModal" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="changePwModalLabel">Change Password</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <form id='change-pw'>
-            <fieldset>
-              <input name='passwords[old]' type='password' placeholder='Old Password' />
-              <input name='passwords[new]' type='password' placeholder='New Password' />
-              <input type='submit' value='Save Changes' />
-            </fieldset>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
-
-
 
   <div id="bookshelf" class="rounded"></div>
   <div id='bookpage' class='rounded'></div>

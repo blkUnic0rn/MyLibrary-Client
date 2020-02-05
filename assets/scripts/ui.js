@@ -21,6 +21,7 @@ const signInSuccess = function (response) {
   $('#top-aside').show()
   $('#sign-in').trigger('reset')
   $('.welcome').hide()
+  $('#pwform').hide()
   setTimeout(() => $('#message').text(' '), 3000)
 }
 
@@ -31,17 +32,13 @@ const signInFailure = function () {
 }
 
 const signOutSuccess = function (response) {
-  $('#message').text('Successfully Signed Out!')
   $('#sign-in-modal').trigger('reset')
-  $('#change-pw').hide()
-  $('#logout').hide()
+  $('#change-pw-modal').hide()
   $('#sign-up-modal').show()
   $('#sign-in-modal').show()
-  $('#createNewBook').hide()
-  $('#showbooks').hide()
   $('#bookshelf').hide()
   $('.welcome').show()
-  $('.top-aside').hide()
+  $('#top-aside').hide()
   setTimeout(() => $('#message').text(' '), 3000)
 }
 
@@ -52,6 +49,7 @@ const signOutFailure = function () {
 
 const changePwSuccess = function (response) {
   $('#message').text('Changed password successfully!')
+  $('#pwform').hide()
   $('#change-pw').trigger('reset')
   setTimeout(() => $('#message').text(' '), 3000)
 }
