@@ -36,6 +36,7 @@ const signOutSuccess = function (response) {
   $('#change-pw-modal').hide()
   $('#sign-up-modal').show()
   $('#sign-in-modal').show()
+  $('.messageboard').hide()
   $('#bookshelf').hide()
   $('.welcome').show()
   $('#top-aside').hide()

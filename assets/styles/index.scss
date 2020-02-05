@@ -5,7 +5,7 @@ form > h3 {
 }
 
 h1 {
-  color: #ffffff;
+  color: rgb(	232, 181, 212);
 }
 
 header {
@@ -17,7 +17,7 @@ header {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin-top: 250px;
+  margin-top: 90px;
   margin-bottom: 250px;
 
   :last-child {
@@ -26,17 +26,26 @@ header {
 }
 
 body {
-  background-image: url('./public/Shelf.png');
+  background-image: url("./public/Shelf.png");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
 }
 
 #bookshelf {
-  background-color: rgba(232, 201, 180, .1);
+  // background-color: rgba(232, 201, 180, .1);
+  background-color: rgba(43, 52, 66, .3);
+  display: flex;
+  align-items: center;
   width: 75%;
   height: 75%;
   margin: auto auto 45px;
+}
+
+.welcomeMessage {
+  text-align: center;
+  color: white;
+  font-size: 17px;
 }
 
 legend {
@@ -46,6 +55,8 @@ legend {
 footer {
   background-color: rgb(94, 60, 35);
   margin-top: 50px;
+  color: rgb(	232, 181, 212);
+  text-align: center;
 }
 
 #createbookForm {
@@ -102,12 +113,30 @@ footer {
 
 section {
   color: white;
-  background-color: pink;
   border: 2px dotted pink;
   text-align: center;
-  width: 75%;
-  height: 75%;
+  display:inline-block;
   margin: auto;
+}
+
+.booklist {
+  background-image: url("./public/Tan_Individual_Spine.png");
+  background-repeat: no-repeat;
+  position: absolute;
+  height: auto;
+  width: auto;
+}
+
+.container {
+  position: relative;
+}
+
+.text-block {
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 section:hover {

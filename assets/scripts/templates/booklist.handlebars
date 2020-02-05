@@ -1,14 +1,10 @@
 {{#each books as |book|}}
   <section class='bookList' data-id="{{book.id}}">
-    <h3 class='title'>
-      {{book.title}}
-    </h3>
-    <h6>Author:
-      {{#if book.author}}
-        {{book.author}}
-      {{else}}
-        No author provided.
-      {{/if}}
-    </h6>
+    <div class='container'>
+      <img src='./../../../public/Tan_Individual_Spine.png' width='150' height='350' />
+      <div class="text-block">
+          {{book.title}}
+      </div>
+    </div>
   </section>
 {{/each}}
