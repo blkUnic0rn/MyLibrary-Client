@@ -1,0 +1,10 @@
+{{#each recommendations as |book|}}
+<section class='recList' data-id="{{book.id}}">
+  <div class='container'>
+    <img src='./../../../public/Tan_Individual_Spine.png' width='150' height='350' />
+    <div class="text-block">
+        {{book.title}}
+    </div>
+  </div>
+</section>
+{{/each}}

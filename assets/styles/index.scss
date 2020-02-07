@@ -30,6 +30,7 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
+  cursor: url('./../../../public/pinkcursor.png'), auto, default;
 }
 
 #bookshelf {
@@ -40,6 +41,12 @@ body {
   width: 75%;
   height: 75%;
   margin: auto auto 45px;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+
+  .recList {
+    flex: 0 0 auto;
+  }
 }
 
 .welcomeMessage {
@@ -117,6 +124,7 @@ section {
   text-align: center;
   display:inline-block;
   margin: auto;
+  width: 200px;
 }
 
 .booklist {

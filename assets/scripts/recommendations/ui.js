@@ -1,7 +1,13 @@
 'use strict'
 
+const showRecList = require('./../templates/recList.handlebars')
+
 const onGetRecBooksSuccess = (data) => {
-  console.log(data)
+  const myRecommendations = showRecList({
+    recommendations: data.recommendations
+  })
+  $('#bookshelf').html(myRecommendations)
+  $('#createbookForm').hide()
 }
 
 module.exports = {
