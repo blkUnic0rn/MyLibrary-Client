@@ -44,7 +44,8 @@ body {
   flex-wrap: nowrap;
   overflow-x: auto;
 
-  .recList {
+  .recList,
+  .bookList {
     flex: 0 0 auto;
   }
 }
@@ -127,13 +128,13 @@ section {
   width: 200px;
 }
 
-.booklist {
-  background-image: url("./public/Tan_Individual_Spine.png");
-  background-repeat: no-repeat;
-  position: absolute;
-  height: auto;
-  width: auto;
-}
+// .booklist {
+//   background-image: url("./public/Tan_Individual_Spine.png");
+//   background-repeat: no-repeat;
+//   position: absolute;
+//   height: auto;
+//   width: auto;
+// }
 
 .container {
   position: relative;
