@@ -14,8 +14,13 @@ const getRecBooks = (event) => {
     .catch()
 }
 
+const showBook = (event) => {
+
+}
+
 const addHandlers = () => {
   $('#recommendedBooks').on('click', getRecBooks)
+  $('#bookshelf').on('click', '.recList', showBook)
 }
 
 module.exports = {

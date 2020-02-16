@@ -15,11 +15,12 @@ const checkReaderStatus = () => {
 }
 
 const printReaderStatus = () => {
-  $('#readerBookcount').text('You have read ' + store.bookcount + ' book(s) so far')
+  store.user.given_name = store.user.given_name.charAt(0).toUpperCase() + store.user.given_name.slice(1)
+  $('#readerBookcount').text(store.user.given_name + ' you have read ' + store.bookcount + ' book(s) so far')
   if (store.readerStatus === 'Amature' || store.readerStatus === 'Average') {
-    $('#readerStatus').text('You are an ' + store.readerStatus + ' reader!')
+    $('#readerStatus').text(store.user.given_name + ' you are an ' + store.readerStatus + ' reader!')
   } else {
-    $('#readerStatus').text('You are a ' + store.readerStatus + ' reader!')
+    $('#readerStatus').text(store.user.given_name + ' you are a ' + store.readerStatus + ' reader!')
   }
 }
 
