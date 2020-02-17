@@ -12,6 +12,17 @@ const getRecBooks = (event) => {
   })
 }
 
+const getaBook = (id) => {
+  return $.ajax({
+    url: config.apiUrl + '/recommendations/' + id,
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 module.exports = {
-  getRecBooks
+  getRecBooks,
+  getaBook
 }

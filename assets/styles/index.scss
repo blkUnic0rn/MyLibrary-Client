@@ -75,6 +75,7 @@ footer {
   width: 75%;
   height: 75%;
   margin: auto auto 45px;
+  padding-bottom: 50px;
   background-color: rgba(139, 69, 19, .4);
 
   h3 {
@@ -82,7 +83,8 @@ footer {
   }
 }
 
-#UpdateBook {
+#UpdateBook,
+#addRecBook {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -125,7 +127,7 @@ section {
   text-align: center;
   display:inline-block;
   margin: auto;
-  width: 200px;
+  width: auto;
 }
 
 // .booklist {

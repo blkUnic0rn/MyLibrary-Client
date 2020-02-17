@@ -28,6 +28,7 @@ const getBooksSuccess = (data) => {
   })
   $('#bookshelf').html(myLibrary)
   $('#createbookForm').hide()
+  $('#UpdateBook').hide()
   readercheck.checkReaderStatus()
 }
 
