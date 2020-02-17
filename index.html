@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>My Library</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Do not add `link` tags-->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Do not add `script` tags-->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
+
+<body>
+  <header id='top-aside'>
+    <nav class="navbar">
+      <button class="navbar-toggler text-white" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+        Nav
+      </button>
+    </nav>
+    <div class="collapse" id="navbarToggleExternalContent">
+      <div class="p-4 collapsedBar">
+        <button type="button" class="btn btn-light text-center" id='logout'> Logout </button>
+        <button type="button" class="btn btn-light text-center" id='changePwButton'> Change Password </button>
+        <button type="button" class="btn btn-light text-center" id='createNewBook'> Create </button>
+        <button type="button" class="btn btn-light text-center" id='showbooks'> Get All Books </button>
+        <button type="button" class="btn btn-light text-center" id='recommendedBooks'> Get Book Recommendations </button>
+        <div id='pwform'>
+          <form id='change-pw'>
+            <fieldset>
+              <input name='passwords[old]' type='password' placeholder='Old Password' />
+              <input name='passwords[new]' type='password' placeholder='New Password' />
+              <input type='submit' value='Save' />
+            </fieldset>
+          </form>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class='welcome'>
+    <h1>Welcome to My Library</h1>
+    <h5> Test Login Credentials</h5>
+    <h6> Email: Test@One </h6>
+    <h6> Password: testing </h6>
+    <br>
+    <div id='credButtons'>
+      <button type="button" class="btn btn btn-light text-center" id="sign-up-modal" data-toggle="modal" data-target="#signUpModal"> Sign Up </button>
+      <button type="button" class="btn btn btn-light text-center" id="sign-in-modal" data-toggle="modal" data-target="#signInModal"> Sign In </button>
+    </div>
+  </div>
+  <!--message board -->
+  <div class='messageboard'>
+    <h3 id='readerBookcount'> </h3>
+    <h3 id='readerStatus'> </h3>
+    <p id='message'> </p>
+  </div>
+
+
+  <!-- sign up modal-->
+  <div class="modal fade" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="signUpModal" aria-hidden="true">
+    <!-- inside the box of the modal -->
+    <div class="modal-dialog" role="document">
+      <!-- contains all content for the modal -->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="signUpModalLabel"> Sign Up Form </h5>
+          <!-- creates little x button to close out the modal -->
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <!-- body text for modal-->
+        <div class="modal-body">
+          <!-- Creating a form -->
+          <form class="sign-up" id="sign-up">
+            <input name='credentials[email]' type='email' placeholder='Email' />
+            <input name='credentials[password]' type='password' placeholder='Password' />
+            <input name='credentials[password_confirmation]' type='password' placeholder='Password Confirmation' />
+            <input name='credentials[given_name]' type='text' placeholder='First Name' />
+            <input name='credentials[surname]' type='text' placeholder='Last Name' />
+            <input name='credentials[dob]' type='date' placeholder='Date of birth (YYYY-MM-DD)' />
+            <br>
+            <input type='submit' value='Sign Up!' />
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- sign in modal-->
+  <div class="modal fade" id="signInModal" tabindex="-1" role="dialog" aria-labelledby="signInModal" aria-hidden="true">
+    <!-- inside the box of the modal -->
+    <div class="modal-dialog" role="document">
+      <!-- contains all content for the modal -->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="signInModalLabel"> Sign In</h5>
+          <!-- creates little x button to close out the modal -->
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <!-- body text for modal-->
+        <div class="modal-body">
+          <!-- Creating a form -->
+          <form class="sign-in" id="sign-in">
+            <fieldset>
+              <legend> Sign In! </legend>
+              <input name='credentials[email]' type='email' placeholder='Email' />
+              <input name='credentials[password]' type='password' placeholder='Password' />
+              <br>
+              <input type='submit' value='Sign In!' />
+            </fieldset>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="createbookForm">
+    <!-- <div class="container rounded createbook mb-2 text-white" id="createbook"> -->
+    <form id='createBook'>
+      <fieldset>
+        <h3 class='text-center'> New Book! </h3>
+        <input name='book[title]' type='text' placeholder='Book Title' />
+        <input name='book[author]' type='text' placeholder='Author Name' />
+        <br>
+        <div id='rating' class='d-flex justify-content-center flex-column'>
+          <h3 class='text-center'> Rating </h3>
+          <label class='heart'>
+            <input type="radio" name="book[rating]" value="1">
+            <div class='imgSelect'>
+              <img src='./public/oneheart.png' alt='one heart rating' width="250" height="350" />
+            </div>
+          </label>
+          <br>
+          <label class='heart'>
+            <input type="radio" name="book[rating]" value="2">
+            <div class='imgSelect'>
+              <img src='./public/twohearts.png' alt='two heart rating' width="250" height="350" />
+            </div>
+          </label>
+          <br>
+          <label class='heart'>
+            <input type="radio" name="book[rating]" value="3">
+            <div class='imgSelect'>
+              <img src='./public/threehearts.png' alt='three heart rating' width="250" height="350" />
+            </div>
+          </label>
+          <br>
+          <label class='heart'>
+            <input type="radio" name="book[rating]" value="4">
+            <div class='imgSelect'>
+              <img src='./public/fourhearts.png' alt='four heart rating' width="250" height="350" />
+            </div>
+          </label>
+          <br>
+          <label class='heart'>
+            <input type="radio" name="book[rating]" value="5">
+            <div class='imgSelect'>
+              <img src='./public/fivehearts.png' alt='five heart rating' width="250" height="350" />
+            </div>
+          </label>
+        </div>
+        <textarea class='bookreview' rows="5" cols="65" name='book[review]' maxlength='500' placeholder='Review...' /></textarea>
+        <br>
+        <input type='submit' value='create' />
+      </fieldset>
+    </form>
+  </div>
+
+  <div id="bookshelf" class="rounded"></div>
+  <div id='bookpage' class='rounded'></div>
+  <div id='updateBookForm' class='rounded'></div>
+
+  <footer class='page-footer font-small blue fixed-bottom'>
+    <p> This site was created for biliophiles!
+    <br>
+      A place to keep track of the books you've read and your opinions on them.
+   </p>
+  </footer>
+
+</body>
+
+</html>
